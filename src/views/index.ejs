@@ -87,28 +87,40 @@
                             <td><%= dataUser[i].lastName %></td>
                             <td><%= dataUser[i].emaill %></td>
                             <td>
-                                <button
-                                    class="btn btn-outline-success"
-                                    type="button"
-                                >
-                                    <a
-                                        href="/detail/user/<%= dataUser[i].id %>"
-                                        target="_blank"
-                                        >Detail</a
+                              <div class="action">
+                                    <button
+                                        class="btn btn-outline-success"
+                                        type="button"
                                     >
-                                </button>
-                                <button
-                                    class="btn btn-outline-warning"
-                                    type="button"
-                                >
-                                    Edit
-                                </button>
-                                <button
-                                    class="btn btn-outline-danger"
-                                    type="button"
-                                >
-                                    Delete
-                                </button>
+                                        <a
+                                            href="/detail/user/<%= dataUser[i].id %>"
+                                            target="_blank"
+                                            >Detail</a
+                                        >
+                                    </button>
+                                    <form action="/edit/<%= dataUser[i].id %>" method="GET">
+                                        <button
+                                            class="btn btn-outline-warning"
+                                            type="submit"
+                                        >
+                                            Edit
+                                        </button>
+                                    </form>
+                                    <form action="/delete" method="POST">
+                                        <input
+                                            type="text"
+                                            hidden
+                                            value="<%= dataUser[i].id %>"
+                                            name="userId"
+                                        />
+                                        <button
+                                            class="btn btn-outline-danger"
+                                            type="submit"
+                                        >
+                                            Delete
+                                        </button>
+                              </div>
+                                </form>
                             </td>
                         </tr>
                         <% } %>
