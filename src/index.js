@@ -5,7 +5,7 @@ import initAPIRoute from "./route/api";
 require("dotenv").config();
 
 const app = express();
-const port = process.env.PORT ?? 3001;
+const port = 3001 || process.env.PORT;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

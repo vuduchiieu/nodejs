@@ -1,9 +1,11 @@
 import express from "express";
 import APIController from "../controller/APIController";
+import cors from "cors";
 
 let router = express.Router();
 
 const initAPIRoute = (app) => {
+    app.use(cors());
     router.get("/users", APIController.getAllUsers);
     router.post("/create", APIController.createNewUser);
     router.put("/update", APIController.updateUser);
