@@ -12,11 +12,11 @@ let getDetailpage = async (req, res) => {
 };
 
 let createNewUser = async (req, res) => {
-    let { firstName, lastName, address, email } = req.body;
+    let { fullName, email, phoneNumber, passWord } = req.body;
 
     await pool.execute(
-        "insert into users(firstName, lastName, address, email) values (?, ?, ?, ?)",
-        [firstName, lastName, address, email]
+        "insert into users(fullName, email, phoneNumber, passWord) values (?, ?, ?, ?)",
+        [fullName, email, phoneNumber, passWord]
     );
 
     return res.redirect("/");
@@ -35,10 +35,10 @@ let getEditPage = async (req, res) => {
 };
 
 let updateUser = async (req, res) => {
-    let { firstName, lastName, address, email, id } = req.body;
+    let { fullName, email, phoneNumber, passWord, id } = req.body;
     await pool.execute(
-        "update users set firstName= ?, lastName= ?, address= ?, email= ? where id = ?",
-        [firstName, lastName, address, email, id]
+        "update users set fullName= ?, email= ?, phoneNumber= ?, passWord= ? where id = ?",
+        [fullName, email, phoneNumber, passWord, id]
     );
 
     return res.redirect("/");
