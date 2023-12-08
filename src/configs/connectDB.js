@@ -5,7 +5,7 @@ const pool = mysql.createPool({
     user: "uvgblflufelbe28r",
     password: "F63pHZMEefidpmEGuvWq",
     database: "brdyncj8vrxm9fkfvbjx",
-    port: 3306, // Clever Cloud MySQL port
+    port: 3306,
 });
 
 export default pool;
