@@ -7,6 +7,7 @@ let router = express.Router();
 const initAPIRoute = (app) => {
     app.use(cors());
     router.get("/users", APIController.getAllUsers);
+    router.get("/user/:id", APIController.getUser);
     router.post("/create", APIController.createNewUser);
     router.put("/update", APIController.updateUser);
     router.delete("/delete/:id", APIController.deleteUser);

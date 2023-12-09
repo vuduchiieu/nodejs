@@ -13,7 +13,6 @@ let getDetailpage = async (req, res) => {
 
 let createNewUser = async (req, res) => {
     let { fullName, email, phoneNumber, passWord } = req.body;
-
     await pool.execute(
         "insert into users(fullName, email, phoneNumber, passWord) values (?, ?, ?, ?)",
         [fullName, email, phoneNumber, passWord]
