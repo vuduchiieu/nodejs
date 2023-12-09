@@ -15,9 +15,12 @@ let getUser = async (req, res) => {
             message: "missing requaired params",
         });
     }
-    await pool.execute(`select * from users where id = ?`, [userId]);
+    const [rows, fields] = await pool.execute(
+        `select * from users where id = ?`,
+        [userId]
+    );
     return res.status(200).json({
-        message: "ok",
+        data: rows,
     });
 };
 
