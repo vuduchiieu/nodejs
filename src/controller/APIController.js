@@ -17,7 +17,7 @@ let getUser = async (req, res) => {
     }
     await pool.execute(`select * from users where id = ?`, [userId]);
     return res.status(200).json({
-        message: "ok",
+        data: rows,
     });
 };
 
