@@ -1,7 +1,10 @@
 import express from "express";
 import configViewEngine from "./configs/viewEngine";
-import initWebRoute from "./route/web";
+import initUserRoute from "./route/users";
 import initAPIRoute from "./route/api";
+import initWebRoute from "./route/web";
+import initProductsRoute from "./route/products";
+
 require("dotenv").config();
 
 const app = express();
@@ -12,6 +15,8 @@ app.use(express.json());
 
 configViewEngine(app);
 initWebRoute(app);
+initUserRoute(app);
+initProductsRoute(app);
 initAPIRoute(app);
 
 app.listen(port, () => {
