@@ -3,7 +3,7 @@ import configViewEngine from "./configs/viewEngine";
 import initUserRoute from "./route/users";
 import initAPIRoute from "./route/api";
 import initWebRoute from "./route/web";
-import initAPIProductsRoute from "./route/apiProducts";
+import initAPIProductsRoute from "./route/APIProducts";
 
 require("dotenv").config();
 
@@ -16,8 +16,8 @@ app.use(express.json());
 configViewEngine(app);
 initWebRoute(app);
 initUserRoute(app);
-initAPIProductsRoute(app);
 initAPIRoute(app);
+initAPIProductsRoute(app);
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
